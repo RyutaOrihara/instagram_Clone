@@ -10,9 +10,8 @@
 
   <body>
     <header>
-      <div class="mainimage">
-        <div class="container">
-          <h1>instaClone</h1>
+      <p>instaClone</p>
+      <!-- <h1>instaClone</h1> -->
           <ul>
             <%= link_to 'View', blogs_path,class: 'btn btn-primary' %>
             <% if logged_in? %>
@@ -22,21 +21,21 @@
               <%= link_to "Sign up", new_user_path,class:'btn btn-info' %>
               <%= link_to "Login", new_session_path,class:'btn btn-danger' %>
             <% end %>
+            <div class="flash">
             <% flash.each do |key, value| %>
               <%= content_tag(:div, value, class: "#{key}") %>
             <% end %>
-          </ul>
+          </div>
+            </ul>
         </div>
       </div>
     </header>
 
     <%= yield %>
 
-    <!-- <footer> -->
-      <!--いらないかもしれない  -->
-    <!-- <p>運営会社DIVE INTO CODE株式会社</p>
-    <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p> -->
-  <!-- </footer> -->
-
+    <footer>
+      <p>運営会社DIVE INTO CODE株式会社</p>
+      <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>
+  </footer>
   </body>
 </html>
