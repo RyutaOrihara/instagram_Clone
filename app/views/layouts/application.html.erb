@@ -10,20 +10,25 @@
 
   <body>
     <header>
-      <ul>
-        <%= link_to 'View', blogs_path,class: 'btn btn-primary' %>
-        <% if logged_in? %>
-          <%= link_to "Profile", user_path(current_user.id),class: 'btn btn-info' %>
-          <%= link_to "Logout", session_path(current_user.id),method: :delete,class:'btn btn-danger' %>
-        <% else %>
-          <%= link_to "Sign up", new_user_path,class:'btn btn-info' %>
-          <%= link_to "Login", new_session_path,class:'btn btn-danger' %>
-        <% end %>
-        <% flash.each do |key, value| %>
-          <%= content_tag(:div, value, class: "#{key}") %>
-        <% end %>
-      </ul>
-   </header>
+      <div class="mainimage">
+        <div class="container">
+          <h1>instaClone</h1>
+          <ul>
+            <%= link_to 'View', blogs_path,class: 'btn btn-primary' %>
+            <% if logged_in? %>
+              <%= link_to "Profile", user_path(current_user.id),class: 'btn btn-info' %>
+              <%= link_to "Logout", session_path(current_user.id),method: :delete,class:'btn btn-danger' %>
+            <% else %>
+              <%= link_to "Sign up", new_user_path,class:'btn btn-info' %>
+              <%= link_to "Login", new_session_path,class:'btn btn-danger' %>
+            <% end %>
+            <% flash.each do |key, value| %>
+              <%= content_tag(:div, value, class: "#{key}") %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </header>
 
     <%= yield %>
 
